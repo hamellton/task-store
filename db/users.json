@@ -1,0 +1,17 @@
+[
+  {
+    "id": "7822f406-ad01-417b-b241-735631d0f8c0",
+    "email": "user3@example.com",
+    "password": "newpassword"
+  },
+  {
+    "id": "dcc36ef4-eaef-4add-9743-43fd72ab6cc9",
+    "email": "user3@gmail.com",
+    "password": "newpassword"
+  },
+  {
+    "id": "d8656956-3bca-486f-ac5d-7aa0d361317c",
+    "email": "test@gmail.com",
+    "password": "$2b$10$FPmBEDb2eA757DiFNvLgRuP3kVmRreHmO29Y1V.civXYULfY5bdUq"
+  }
+]
