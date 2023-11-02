@@ -12,8 +12,7 @@ const deleteSuccessMessage = "User deleted successfully";
 const deleteUserErrorMessage = "Error deleting the user";
 const productNotFoundMessage = "Product not found";
 
-module.exports = {
-  serverRunningMessage,
+const userController = {
   existingUserMessage,
   registrationSuccessMessage,
   invalidCredentialsMessage,
@@ -25,5 +24,13 @@ module.exports = {
   deleteOwnAccountMessage,
   deleteSuccessMessage,
   deleteUserErrorMessage,
+}
+const productController = {
   productNotFoundMessage
+}
+
+module.exports = {
+  userController,
+  productController,
+  serverRunningMessage
 };
