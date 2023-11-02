@@ -1,0 +1,86 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript"
+  ],
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "unused-imports",
+    "import",
+    "formatjs"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "react/prop-types": 0,
+    "prettier/prettier": ["error"],
+    "react/display-name": "off",
+    "import/export": 0,
+    "no-unused-vars": 2,
+    "unused-imports/no-unused-imports": ["error"],
+    "eol-last": [2],
+    "react/button-has-type": [2],
+    "react/destructuring-assignment": [2],
+    "react/jsx-handler-names": [0],
+    "react/jsx-no-bind": [0],
+    "react/jsx-no-useless-fragment": [2],
+    "react/jsx-pascal-case": [2],
+    "react/jsx-sort-default-props": [2],
+    "react/jsx-curly-brace-presence": [
+      2,
+      { "props": "never", "children": "never" }
+    ],
+    "react/no-array-index-key": [2],
+    "react/no-did-mount-set-state": [2],
+    "react/no-did-update-set-state": [2],
+    "react/no-direct-mutation-state": [2],
+    "react/no-multi-comp": [2],
+    "react/no-redundant-should-component-update": [2],
+    "react/no-this-in-sfc": [2],
+    "react/no-unused-state": [2],
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": [0],
+    "react/self-closing-comp": [2],
+    "require-await": "error",
+    "formatjs/no-multiple-whitespaces": [2],
+    "formatjs/enforce-placeholders": [2],
+    "no-redeclare": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint/eslint-plugin"],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-redeclare": ["error"],
+        "@typescript-eslint/ban-ts-comment": [1]
+      }
+    }
+  ]
+}
