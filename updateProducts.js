@@ -2,17 +2,13 @@ const fs = require("fs");
 const csv = require("csv-parser");
 const { v4: uuidv4 } = require("uuid");
 
-// Переменная для отслеживания обновления данных из CSV
-let productsUpdated = false;
-
-const updateProductsFromCSV = () => {
-  if (!productsUpdated) {
+const updateProductsFromCSV = (callback) => {
     const results = [];
 
     fs.createReadStream("db/products.csv")
       .pipe(csv())
       .on("data", (data) => {
-        // Здесь вы можете преобразовать данные из CSV в нужный формат JSON
+        // преобразование данные из CSV в нужный формат JSON
         const product = {
           id: uuidv4(),
           sku: data.SKU,
@@ -33,9 +29,13 @@ const updateProductsFromCSV = () => {
       .on("end", () => {
         // Обновление данных в JSON-файле
         fs.writeFileSync("db/products.json", JSON.stringify(results, null, 2));
-        productsUpdated = true; // Установите флаг в true, чтобы указать, что данные обновлены
+
+        if (callback) {
+          callback();
+        }
       });
-  }
 }
 
-updateProductsFromCSV();
+module.exports = {
+  updateProductsFromCSV
+}

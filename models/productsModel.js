@@ -1,24 +1,26 @@
 const fs = require("fs");
-
-const productsFilePath = "./db/products.json";
-
-class ProductModel {
-  constructor() {
-    this.products = this.loadProductsFromJson();
-  }
-
-  loadProductsFromJson() {
-    const data = fs.readFileSync(productsFilePath, 'utf8');
-    return JSON.parse(data);
+class Product {
+  loadProductsFromJSON() {
+    try {
+      const productsData = fs.readFileSync("db/products.json", "utf8");
+      const products = JSON.parse(productsData);
+      return products;
+    } catch (error) {
+      console.error("Ошибка при загрузке продуктов из JSON файла:", error);
+      return [];
+    }
   }
 
   getAllProducts() {
-    return this.products;
+    const products = this.loadProductsFromJSON();
+    return products;
   }
 
-  getProductById(productId) {
-    return this.products.find((product) => product.id === productId);
+  getProductById(id) {
+    const products = this.loadProductsFromJSON();
+    const idString = String(id);
+    return products.find((product) => product.id === idString);
   }
 }
 
-module.exports = ProductModel;
+module.exports = Product;
