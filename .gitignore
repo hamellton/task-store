@@ -1,0 +1,6 @@
+# Игнорировать файлы с расширением .log
+*.log
+
+# Игнорировать директорию node_modules и всё её содержимое
+node_modules/
+frontend/node_modules/

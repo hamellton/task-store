@@ -1,6 +1,6 @@
 [
   {
-    "id": "be4a1dee-1c88-4b0a-84c6-e450ecc4714d",
+    "id": "2d810d3c-d337-49f0-a14a-b0a506d11911",
     "sku": "4G180",
     "description": "Tenda 4G LTE 150Mbps Mobile WiFi Router | 4G180",
     "cpt": 34,
@@ -14,7 +14,7 @@
     "category": "test"
   },
   {
-    "id": "0808bdd8-c684-49d8-bcba-f917934d8096",
+    "id": "bd09f0e6-f1fc-4eab-8881-2fe39eda870f",
     "sku": "4G680",
     "description": "Tenda 4G LTE 300Mbps WiFi Router | 4G680",
     "cpt": 0,
@@ -28,7 +28,7 @@
     "category": "test"
   },
   {
-    "id": "56df63ea-6e3c-419b-bd1a-5e6f83c62c97",
+    "id": "22d68e83-bf75-42ba-8c87-c17056ee988a",
     "sku": "ACB-AC",
     "description": "Ubiquiti AirCube AC WiFi Router | ACB-AC",
     "cpt": 20,
@@ -42,7 +42,7 @@
     "category": "test"
   },
   {
-    "id": "0a9f7b7c-83dc-46a7-83f9-32ef9bf9bb9d",
+    "id": "54e3ed50-a165-411c-981f-a598f3420387",
     "sku": "ACB-ISP",
     "description": "Ubiquiti AirCube WiFi PoE Access Point with UNMS | ACB-ISP",
     "cpt": 159,
@@ -56,7 +56,7 @@
     "category": "test"
   },
   {
-    "id": "4aee2cbd-0667-4936-b71a-d2bbfeffb649",
+    "id": "fd66568f-0522-4a9c-98a4-043c12a42cc7",
     "sku": "AF-11FX",
     "description": "Ubiquiti AirFiberX 11GHz PtP Radio | AF-11FX",
     "cpt": 10,
@@ -70,7 +70,7 @@
     "category": "test"
   },
   {
-    "id": "61f75426-6c8d-4e02-bb49-486a128402c7",
+    "id": "35a58c22-f36a-49ad-ad96-c162a4fbc9d7",
     "sku": "AF-11FXDUPL",
     "description": "Ubiquiti AirFiberX 11Ghz Low Band Duplexer | AF-11FX-DUP-L",
     "cpt": 21,
@@ -84,7 +84,7 @@
     "category": "test"
   },
   {
-    "id": "829fe046-fd24-49f0-be3b-3ba561c2f59c",
+    "id": "79f88de7-3efe-4277-bdd0-a84ed2da4225",
     "sku": "AF-11G35",
     "description": "Ubiquiti AirFiber Dish 11Ghz 35dBi 81cm | AF-11G35",
     "cpt": 15,
@@ -98,7 +98,7 @@
     "category": "test"
   },
   {
-    "id": "c1c2c57d-8860-493d-9dfe-5beee31ed54c",
+    "id": "4f041f6c-a0b4-4926-b121-ab83df249d57",
     "sku": "AF-5XHD",
     "description": "Ubiquiti AirFiber5X HD PtP Radio Gigabit WiFi | AF-5XHD",
     "cpt": 64,
@@ -112,7 +112,7 @@
     "category": "test"
   },
   {
-    "id": "34573b5c-62c2-491c-947f-bb48259ec15c",
+    "id": "edaa9565-b7a4-4bd2-b2bc-2207cbce3e71",
     "sku": "AFI-INSK",
     "description": "Ubiquiti AmpliFi Instant Router +1 MeshPoint Kit | AFI-INS",
     "cpt": 37,
@@ -126,7 +126,7 @@
     "category": "test"
   },
   {
-    "id": "326fb012-8b9a-4db9-b434-5549f686587a",
+    "id": "7655c61e-320e-423d-8e28-9fb4f69aa608",
     "sku": "AFI-INSR",
     "description": "Ubiquiti AmpliFi Instant Router | AFI-INS-R",
     "cpt": 23,
@@ -140,7 +140,7 @@
     "category": "test"
   },
   {
-    "id": "d0aad6b0-f7d7-4082-bafc-49ddbad7c7f6",
+    "id": "3b9e24cc-0ba2-43fa-a23c-2ca9c0209e4a",
     "sku": "AIR-D523X",
     "description": "Ubiquiti 5GHz AirFiber Dish 23dBi Slant 45 PtP | AF-5G23-S45",
     "cpt": 16,
@@ -154,7 +154,7 @@
     "category": "test"
   },
   {
-    "id": "4c6ad2ca-d18c-4863-ad08-ea2e984bc38f",
+    "id": "194ee8f8-cddd-4fa0-880b-e527c5a9d29d",
     "sku": "AIR-D530",
     "description": "Ubiquiti 5GHz AirMax Dish 30dBi Backhaul PtP | RD-5G30",
     "cpt": 17,
@@ -168,7 +168,7 @@
     "category": "test"
   },
   {
-    "id": "6f66b922-9ca2-4dc9-810c-e17c0a8334b6",
+    "id": "49541259-6f98-4e7d-bd0e-d2e3346f9003",
     "sku": "AIR-D530LW",
     "description": "Ubiquiti 5GHz AirMax Dish 30dBi Light Weight PtP | RD-5G30-LW",
     "cpt": 62,

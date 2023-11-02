@@ -13,5 +13,10 @@
     "id": "d8656956-3bca-486f-ac5d-7aa0d361317c",
     "email": "test@gmail.com",
     "password": "$2b$10$FPmBEDb2eA757DiFNvLgRuP3kVmRreHmO29Y1V.civXYULfY5bdUq"
+  },
+  {
+    "id": "e6a79eed-e929-43f0-85a3-25aece0bcca6",
+    "email": "test1@gmail.com",
+    "password": "$2b$10$vq8O5hvoGlFZIK61caxJ4eDMCJsj9mwfZfynv//WwRTJHlolAwXcq"
   }
 ]
