@@ -1,6 +1,8 @@
 const express = require("express");
 const Product = require("./../models/productsModel");
 
+const messages = require("./../messages");
+
 const router = express.Router();
 const productModel = new Product();
 
@@ -15,7 +17,7 @@ router.get("/product/:id", (req, res) => {
   if (product) {
     res.json({ product, status: 200 });
   } else {
-    res.status(404).json({ message: "Продукт не найден", status: 404 });
+    res.status(404).json({ message: messages.productNotFoundMessage, status: 404 });
   }
 });
 

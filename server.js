@@ -1,8 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 const { updateProductsFromCSV } = require("./updateProducts");
+
+const messages = require("./messages");
 
 const server = () => {
   const app = express();
@@ -14,7 +17,7 @@ const server = () => {
 
   const port = process.env.PORT || 4000;
   app.listen(port, () => {
-    console.log(`Сервер запущен на порту ${port}`);
+    console.log(`${messages.serverRunningMessage} ${port}`);
   });
 };
 
