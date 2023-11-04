@@ -1,4 +1,3 @@
-// src/pages/LoginPage.tsx
 import React from "react";
 import styled from "styled-components";
 import Layout from "../../organisms/Layout/Layout";

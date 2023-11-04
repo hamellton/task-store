@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 const { updateProductsFromCSV } = require("./updateProducts");
@@ -11,6 +12,7 @@ const server = () => {
   const app = express();
 
   app.use(bodyParser.json());
+  app.use(cors());
 
   app.use("/api", userRoutes);
   app.use("/api", productRoutes);

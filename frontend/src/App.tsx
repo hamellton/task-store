@@ -7,12 +7,12 @@ const App: React.FC = () => {
     <>
       <GlobalStyles />
       <BrowserRouter>
-      <Routes>
-      <Route path="/" element={<LoginPage />} />
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;

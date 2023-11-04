@@ -6,12 +6,12 @@ import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
 const HeaderContainer = styled.header<{ device?: DeviceTypes }>`
   background-color: ${Colors.primaryBackground};
   color: ${Colors.white};
-  padding: 16px;
+  padding: 16px 100px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: absolute;
   width: 100%;
+  gap: 100px;
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
@@ -31,8 +31,12 @@ const Logo = styled.div<{ device?: DeviceTypes }>`
     `}
 `;
 
-const Menu = styled.div<{ device?: DeviceTypes }>`
-  font-size: 18px;
+const MenuLoginContainer = styled.div<{ device?: DeviceTypes }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
@@ -40,12 +44,26 @@ const Menu = styled.div<{ device?: DeviceTypes }>`
     `}
 `;
 
-const Login = styled.div<{ device?: DeviceTypes }>`
+const Menu = styled.div<{ device?: DeviceTypes }>`
   font-size: 18px;
+
   ${(props) =>
     props.device === DeviceTypes.MOBILE &&
     css`
       font-size: 16px;
+      text-align: left;
+    `}
+`;
+
+const Login = styled.div<{ device?: DeviceTypes }>`
+  font-size: 18px;
+  margin-left: 20px;
+  ${(props) =>
+    props.device === DeviceTypes.MOBILE &&
+    css`
+      font-size: 16px;
+      text-align: right;
+      margin-left: 0;
     `}
 `;
 
@@ -55,8 +73,10 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer device={device}>
       <Logo device={device}>Logo</Logo>
-      <Menu device={device}>Products</Menu>
-      <Login device={device}>Login</Login>
+      <MenuLoginContainer device={device}>
+        <Menu device={device}>Products</Menu>
+        <Login device={device}>Login</Login>
+      </MenuLoginContainer>
     </HeaderContainer>
   );
 };

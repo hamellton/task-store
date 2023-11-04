@@ -1,16 +1,20 @@
-import React, { useMemo } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
 import { Colors } from "../../../types/baseTypes";
 import useDevice, { DeviceTypes } from "../../../hooks/useDevice";
+import config from "../../../utils/config";
+import axios from "axios";
 
 const validationSchema = Yup.object().shape({
-  username: Yup.string().required("Username is required"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
   password: Yup.string().required("Password is required"),
 });
 
-const initialValues = { username: "", password: "" };
+const initialValues = { email: "", password: "" };
 
 const Container = styled.div<{ isMobile: boolean }>`
   display: flex;
@@ -59,41 +63,74 @@ const SubmitButton = styled.button<{ isMobile: boolean }>`
 
 const LoginForm: React.FC = () => {
   const { device } = useDevice() ?? {};
+  const [token, setToken] = useState<string | null>(
+    localStorage.getItem("jwtToken")
+  );
 
-  const handleSubmit = (values: any) => {
-    // Обработка отправки данных формы
-    console.log("Form submitted with values:", values);
+  const handleSubmit = async (values: any) => {
+    try {
+      const response = await axios.post(
+        `${config.serverUrl}/user/register`,
+        values
+      );
+
+      if (response.status === 201) {
+        const loginResponse = await axios.post(
+          `${config.serverUrl}/user/login`,
+          {
+            email: values.email,
+            password: values.password,
+          }
+        );
+
+        if (loginResponse.status === 200) {
+          const data = loginResponse.data;
+          const token = data.token;
+
+          setToken(token);
+          localStorage.setItem("jwtToken", token);
+        } else {
+          console.error("Login failed");
+        }
+      } else {
+        console.error("Registration failed");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
+    }
   };
 
-  const isMobile = useMemo(() => {
-    return device === DeviceTypes.MOBILE;
-  }, [device]);
+  const isMobile = device === DeviceTypes.MOBILE;
 
   return (
     <Container isMobile={isMobile}>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        <Form>
-          <InputContainer isMobile={isMobile}>
-            <Label htmlFor="username">Username</Label>
-            <Input type="text" name="username" isMobile={isMobile} />
-            <ErrorText name="username" component="div" />
-          </InputContainer>
+      {token ? (
+        <div>"My Account"</div>
+      ) : (
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form>
+            <InputContainer isMobile={isMobile}>
+              <Label htmlFor="email">Email</Label>
+              <Input type="text" name="email" isMobile={isMobile} />
+              <ErrorText name="email" component="div" />
+            </InputContainer>
 
-          <InputContainer isMobile={isMobile}>
-            <Label htmlFor="password">Password</Label>
-            <Input type="password" name="password" isMobile={isMobile} />
-            <ErrorText name="password" component="div" />
-          </InputContainer>
+            <InputContainer isMobile={isMobile}>
+              <Label htmlFor="password">Password</Label>
+              <Input type="password" name="password" isMobile={isMobile} />
+              <ErrorText name="password" component="div" />
+            </InputContainer>
 
-          <SubmitButton type="submit" isMobile={isMobile}>
-            Login
-          </SubmitButton>
-        </Form>
-      </Formik>
+            <SubmitButton type="submit" isMobile={isMobile}>
+              Register
+            </SubmitButton>
+          </Form>
+        </Formik>
+      )}
     </Container>
   );
 };

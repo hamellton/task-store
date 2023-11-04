@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
 const UserModel = require("../models/userModel");
 const authenticateUser = require("../middleware/authMiddleware");
+const cookieParser = require("cookie-parser");
 
 const messages = require("./../messages");
 const {
@@ -20,6 +21,8 @@ const {
 
 const router = express.Router();
 const userModel = new UserModel();
+
+router.use(cookieParser());
 
 router.post("/register", (req, res) => {
   const { email, password } = req.body;
@@ -68,6 +71,13 @@ router.post("/login", (req, res) => {
       { email: user.email },
       process.env.JWT_SECRET
     );
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+    });
+
     res.json({ message: authenticationSuccessMessage, token, status: 200 });
   });
 });
